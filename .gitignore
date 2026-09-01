@@ -1,0 +1,21 @@
+# Python and local tooling
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.venv/
+venv/
+
+# IDE and test outputs
+.idea/
+.pytest_cache/
+htmlcov/
+logs/
+report/
+allure-results/
+allure-report/
+
+# Local configuration and generated extraction state
+pythonproject/conf/config.ini
+pythonproject/environment.xml
+pythonproject/extract.yaml
