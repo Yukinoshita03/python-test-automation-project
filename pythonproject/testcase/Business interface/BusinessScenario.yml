@@ -1,0 +1,89 @@
+- baseInfo:
+    description: demo-description
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: GET
+    header:
+      Content-Type: application/json
+      token: demo-token
+  testCase:
+  - case_name: demo-case-name
+    params:
+      msgType: demo-msgtype
+      page: 1
+      size: 10
+    validation:
+    - contains:
+        error_code: '0'
+    extract_list:
+      goodsIds: $.data.goodsIds
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    json:
+      pro_id: $.data.value
+      page: 1
+      size: 10
+    validation:
+    - eq:
+        error_code: '0'
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    json:
+      goods_id: $.data.value
+      number: 1
+      propertyChildIds: demo-propertychildids
+      inviter_id: 1
+      price: demo-price
+      freight_insurance: demo-freight-insurance
+      discount_code: demo-discount-code
+      consignee_info:
+        name: Demo User
+        phone: 0
+        address: Example Address
+    validation:
+    - eq:
+        message: demo-message
+    extract:
+      orderNumber: $.data.orderNumber
+      userId: $.data.userId
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    json:
+      orderNumber: $.data.value
+      userId: $.data.value
+      timeStamp: '0'
+    validation:
+    - eq:
+        message: demo-message
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    json:
+      orderNumber: $.data.value
+      timeStamp: '0'
+    validation:
+    - eq:
+        status: demo-status
