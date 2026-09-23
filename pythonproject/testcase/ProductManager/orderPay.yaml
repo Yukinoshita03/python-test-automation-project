@@ -1,0 +1,17 @@
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    json:
+      orderNumber: $.data.value
+      userId: $.data.value
+      timeStamp: '0'
+    validation:
+    - contains:
+        message: demo-message
+    - contains:
+        error_code: '0'
