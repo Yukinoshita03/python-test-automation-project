@@ -1,0 +1,57 @@
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    data:
+      username: demo-username
+      password: demo-password
+      role_id: 1
+      dates: '2026-01-01'
+      phone: 0
+      token: demo-token
+    validation:
+    - contains:
+        status_code: 200
+    - contains:
+        msg: demo-message
+  - case_name: demo-case-name
+    data:
+      username: demo-username
+      password: demo-password
+      role_id: 1
+      dates: '2026-01-01'
+      phone: 0
+      token: null
+    validation:
+    - contains:
+        status_code: 200
+    - contains:
+        msg: demo-message
+  - case_name: demo-case-name
+    data:
+      password: demo-password
+      role_id: 1
+      dates: '2026-01-01'
+      phone: 0
+      token: null
+    validation:
+    - contains:
+        status_code: 200
+    - contains:
+        msg: demo-message
+  - case_name: demo-case-name
+    data:
+      username: demo-username
+      password: demo-password
+      dates: '2026-01-01'
+      phone: 0
+      token: null
+    validation:
+    - contains:
+        status_code: 200
+    - contains:
+        msg: demo-message
