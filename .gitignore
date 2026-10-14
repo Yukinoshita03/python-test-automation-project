@@ -1,20 +1,21 @@
-# Python environments and generated files
-.venv/
-venv/
+# Python and local tooling
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.coverage
+*.so
+.Python
+.venv/
+venv/
 
-# Local credentials and project data
-/pythonproject/conf/config.ini
-/pythonproject/data/
-/pythonproject/logs/
-/pythonproject/report/
-/pythonproject/extract.yaml
-
-# IDE / OS
+# IDE and test outputs
 .idea/
-.vscode/
-.DS_Store
-*.swp
+.pytest_cache/
+htmlcov/
+logs/
+report/
+allure-results/
+allure-report/
+
+# Local configuration and generated extraction state
+pythonproject/conf/config.ini
+pythonproject/environment.xml
+pythonproject/extract.yaml
