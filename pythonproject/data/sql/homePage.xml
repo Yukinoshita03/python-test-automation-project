@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<HomePage>
+    <select id="ent_sales">SELECT 1</select>
+</HomePage>

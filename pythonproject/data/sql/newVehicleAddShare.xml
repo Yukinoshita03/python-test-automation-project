@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<NewVehicleAddShare>
+    <select id="zyl">SELECT 1</select>
+    <select id="zqsa">SELECT 1</select>
+    <select>SELECT 1<query id="que">SELECT 1</query>
+    </select>
+</NewVehicleAddShare>
