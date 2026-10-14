@@ -4,9 +4,8 @@ import traceback
 # sys.path.insert(0, "..")
 
 import configparser
-
-from pythonproject.common.recordlog import logs
-from pythonproject.conf import setting
+from conf import setting
+from common.recordlog import logs
 
 
 class OperationConfig:

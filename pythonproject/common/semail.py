@@ -1,13 +1,12 @@
 import smtplib
 from email.mime.text import MIMEText
-
+from conf.operationConfig import OperationConfig
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication  # 附件
-
+from conf import setting
+from common.recordlog import logs
 import re
-
-from pythonproject.common.recordlog import logs
-from pythonproject.conf.operationConfig import OperationConfig
+import os
 
 conf = OperationConfig()
 
@@ -53,6 +52,13 @@ class SendEmail(object):
             atta['Content-Type'] = 'application/octet-stream'
             atta['Content-Disposition'] = 'attachment; filename="testresult.xls"'
             message.attach(atta)
+
+        if os.getenv("API_TEST_EMAIL_ENABLED", "0") != "1":
+            logs.info("email integration disabled; set API_TEST_EMAIL_ENABLED=1 to opt in")
+            return
+        if not self.__host or not self.__user or not self.__passwd:
+            logs.info("email integration has no configured credentials")
+            return
 
         try:
             service = smtplib.SMTP_SSL(self.__host)

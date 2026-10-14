@@ -19,11 +19,11 @@ SHEET_ID = 0
 REPORT_TYPE = 'allure'
 
 # 是否发送钉钉消息
-dd_msg = False
+dd_msg = os.getenv("API_TEST_DD_MSG", "0") == "1"
 
 # 文件路径
 FILE_PATH = {
-    'CONFIG': os.path.join(DIR_BASE, 'conf/config.ini'),
+    'CONFIG': os.path.join(DIR_BASE, os.getenv('API_TEST_CONFIG_FILE', 'conf/config.example.ini')),
     'LOG': os.path.join(DIR_BASE, 'logs'),
     'YAML': os.path.join(DIR_BASE),
     'TEMP': os.path.join(DIR_BASE, 'report/temp'),

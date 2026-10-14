@@ -14,5 +14,3 @@ requests
 SQLAlchemy
 urllib3
 faker
-aiohttp
-openai
