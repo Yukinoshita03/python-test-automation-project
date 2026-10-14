@@ -1,0 +1,28 @@
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: POST
+    header:
+      Content-Type: application/json
+  testCase:
+  - case_name: demo-case-name
+    json:
+      goods_id: $.data.value
+      number: 1
+      propertyChildIds: demo-propertychildids
+      inviter_id: demo-inviter-id
+      price: demo-price
+      freight_insurance: demo-freight-insurance
+      discount_code: demo-discount-code
+      consignee_info:
+        name: Demo User
+        phone: 0
+        address: Example Address
+    validation:
+    - eq:
+        message: demo-message
+    - eq:
+        error_code: '0'
+    extract:
+      orderNumber: $.data.orderNumber
+      userId: $.data.userId

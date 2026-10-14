@@ -1,0 +1,18 @@
+- baseInfo:
+    api_name: demo-api-name
+    url: https://api.example.test/mock
+    method: GET
+    header:
+      Content-Type: application/json
+      token: demo-token
+  testCase:
+  - case_name: demo-case-name
+    params:
+      msgType: demo-msgtype
+      page: 1
+      size: 10
+    validation:
+    - contains:
+        error_code: '0'
+    extract_list:
+      goodsId: $.data.goodsId
